@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{{ STATIC_URL }}bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <title>{% block titulo %}Tuzmec{% endblock titulo %}</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Tuzmec</a>
+            <ul class="nav">
+                {% block listaSecciones %}
+                <li class="active"><a href="#">Inicio</a></li>
+                {% endblock listaSecciones %}
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span2">
+                <!--Sidebar content-->
+                {% block sidebar %}
+                {% endblock sidebar %}
+            </div>
+            <div class="span10">
+                <!--Body content-->
+                {% block contenido %}
+                    Aca va el contenido
+                {% endblock contenido %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
